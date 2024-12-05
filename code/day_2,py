@@ -110,10 +110,8 @@ df["remove_change_point"] = np.where(
 )
 
 df["save"] = np.where((df["monotone"] == 1) & (df["level_thresh"] == 1), 1, 0)
-filter = (
-    (df["remove_change_point"] == 1)
-    | (df["remove_zero"] == 1)
-    | (df["add_level_thresh"] == 1)
+filter = ((df["remove_change_point"] == 1) ^ (df["remove_zero"] == 1)) | (
+    df["add_level_thresh"] == 1
 )
 df["additional_save"] = np.where(filter, 1, 0)
 
