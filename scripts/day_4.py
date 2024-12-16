@@ -85,7 +85,7 @@ shifts_to_check = [
     np.array([-1, 0]),  # vertical
     np.array([-1, -1]),  # diagonal top right, bottom left
     # right to left
-    np.array([1, 1]),  # diagonal bottom right, top left
+    np.array([1, -1]),  # diagonal bottom right, top left
 ]
 factors_to_check = [
     [5, 9, -38 / 4],  # XMAS = 1, 2, 3, 4
